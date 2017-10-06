@@ -1,0 +1,3 @@
+.chunk-upload-holder{border:1px solid #0ea0eb;background:#2B6FB6;position:relative}.chunk-upload-holder:before{content:" ";display:block;width:100%;padding-bottom:80px}.chunk-upload-holder .chunk-droppable{position:absolute;top:0;left:0;right:0;bottom:0}.chunk-upload-holder button{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);z-index:3}.chunk-upload-holder .chunk-progress{position:absolute;bottom:0;left:0;height:5px;background:#00ff00}
+
+/*# sourceMappingURL=../sourcemaps/styles.min.css.map */

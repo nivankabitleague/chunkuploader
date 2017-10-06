@@ -1,0 +1,62 @@
+{
+  "name": "silverstripers-theme",
+  "version": "1.0.0",
+  "description": "SilverStripers theme",
+  "main": "javascript/common.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --progress --colors --config webpack.config.babel.js",
+    "webpack:w": "npm run webpack -- --watch",
+    "scss": "gulp scss",
+    "scss:w": "gulp scss:w",
+    "js": "npm run webpack",
+    "js:w": "npm run webpack:w",
+    "build": "concurrently \"gulp scss\" \"npm run webpack\"",
+    "build:w": "concurrently \"gulp scss:w\" \"npm run webpack:w\"",
+    "postinstall": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+http://bitbucket.org/silverstripersltd/silverstriperscom.git"
+  },
+  "author": "SilverStripers",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ],
+    "plugins": [
+      "transform-object-assign"
+    ]
+  },
+  "dependencies": {
+    "resumablejs" :"1.0.2",
+    "@azmenak/resumablejs": "1.0.3"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.9.0",
+    "concurrently": "2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-inject-string": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-stylelint": "^3.9.0",
+    "modernizr": "^3.3.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "webpack": "^1.13.1",
+    "webpack-stream": "^3.2.0"
+  }
+}

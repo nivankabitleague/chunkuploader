@@ -1,0 +1,9 @@
+---
+Name: chunkuploader
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+Director:
+  rules:
+    'chunkupload//$Action/$ID'  : 'ChunkUploadHandler'
