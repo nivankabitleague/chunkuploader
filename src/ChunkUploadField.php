@@ -6,8 +6,9 @@
  * Date: 06/10/2017
  * Time: 20:54
  */
-class ChunkUploadField extends HiddenField
+class ChunkUploadField extends FormField
 {
+
 
     public function Field($properties = array())
     {
@@ -20,6 +21,33 @@ class ChunkUploadField extends HiddenField
     public function getUploadTarget()
     {
         return Director::baseURL() . 'chunkupload/handle';
+    }
+
+    public function getAttributes() {
+        return array_merge(
+            parent::getAttributes(),
+            array(
+                'type' => 'hidden',
+            )
+        );
+    }
+    
+    public function saveInto(DataObjectInterface $record) {
+        $fieldname = $this->getName();
+        if(!$fieldname) return $this;
+
+        $idList = $this->Value();
+
+        // Check type of relation
+        $relation = $record->hasMethod($fieldname) ? $record->$fieldname() : null;
+        if($relation && ($relation instanceof RelationList || $relation instanceof UnsavedRelationList)) {
+            // has_many or many_many
+            $relation->setByIDList($idList);
+        } elseif($record->hasOneComponent($fieldname)) {
+            // has_one
+            $record->{"{$fieldname}ID"} = $idList ? reset($idList) : 0;
+        }
+        return $this;
     }
 
 }
