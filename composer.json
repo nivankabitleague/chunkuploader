@@ -1,0 +1,17 @@
+{
+  "name": "silverstripers/chunkuploader",
+  "description": "Chunkupload, fast, simultaneous uploads",
+  "type": "silverstripe-module",
+  "keywords": ["silverstripe", "resumable", "fast uploads", "large file uploads", "module"],
+  "license": "BSD-2-Clause",
+  "authors": [
+    {
+      "name": "Nivanka Fonseka",
+      "email": "nivanka@silverstripers.com"
+    }],
+  "require": {
+    "silverstripe/framework": "^3.6.*",
+    "flowjs/flow-php-server": "v1.0.3"
+  }
+
+}
