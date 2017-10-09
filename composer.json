@@ -10,7 +10,7 @@
       "email": "nivanka@silverstripers.com"
     }],
   "require": {
-    "silverstripe/framework": "^3.6.*",
+    "silverstripe/framework": "^3.6.0",
     "flowjs/flow-php-server": "v1.0.3"
   }
 
